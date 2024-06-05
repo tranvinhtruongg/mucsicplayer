@@ -1,0 +1,170 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music player</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="./assets/free.zing.mp3.vip.reference_1.png" type="stylesheet">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<div class="container">
+  <aside class="sidebar">
+    <div class="logo">
+        <button class="menu-btn" id="menu-close">
+            <i class='bx bx-log-out-circle'></i>
+        </button>
+        <i class='bx bx-pulse'></i>
+        <a>Hun</a>
+    </div>
+    <div class="menu">
+        <h5>Menu</h5>
+        <ul>
+            <li>
+                <i class='bx bxs-bolt-circle'></i>
+                <a>Explore</a>
+            </li>
+            <li class="volumne">
+                <i class='bx bx-volume-full' >                           
+                </i>
+                <a>Genres</a>
+                <div class="playbar__volumne">
+                    <i class='bx bxs-volume-full'></i>
+                    <i class='bx bxs-volume-mute'></i>
+                    <input type="range" class="volumne__amount" value="100" oninput="app.progressInput(this)">
+                </div>
+            </li>
+            <li>
+                <i class='bx bxs-photo-album'></i>
+                <a>Albums</a>
+            </li>
+            <li>
+                <i class='bx bxs-microphone' ></i>
+                <a>Artists</a>
+            </li>
+            <li>
+                <i class='bx bx-podcast' ></i>
+                <a>Poddcasts </a>
+            </li>
+        </ul>
+    </div>
+    <div class="menu">
+        <h5>Library</h5>
+        <ul>
+            <li>
+                <i class='bx bx-undo'></i>
+                <a>Recent</a>
+            </li>
+            
+            <li>
+                <i class='bx bxs-photo-album'></i>
+                <a>Albums</a>
+            </li>
+            <li>
+                <i class='bx bxs-heart' ></i>
+                <a>Favourites</a>
+            </li>
+            <li>
+                <i class='bx bxs-folder-open'></i>
+                <a>Local</a>
+            </li>
+        </ul>
+    </div>
+    <div class="menu">
+        <h5>Playlist</h5>
+        <ul>
+            <li>
+                <i class='bx bxs-plus-square'></i>
+                <a>Create New</a>
+            </li>
+            
+            <li>
+                <i class='bx bxs-caret-right-circle'></i>
+                <a>Best of 2023</a>
+            </li>
+            <li>
+                <i class='bx bxs-caret-right-circle'></i>
+                <a>Best of 2022</a>
+            </li>
+            <li>
+                <i class='bx bxs-caret-right-circle'></i>
+                <a>Kael Fischer</a>
+            </li>
+        </ul>
+    </div>
+    <div class="playing">
+        <div class="top">
+            <img class="current" src="assets/current.png">
+            <h4>Apple <br> Homepod</h4>
+        </div>
+        <div class="bottom">
+            <i class='bx bx-podcast'></i>
+            <p>Playing On Device</p>
+        </div>
+    </div>
+  </aside>
+  <!-- <div class="waves">
+    <span class="wave paused" style="width: 0px;"></span>
+    <span class="wave paused" style="width: 0px;"></span>
+    <span class="wave paused" style="width: 0px;"></span>
+    <span class="wave paused" style="width: 0px;"></span>
+    <span class="wave paused" style="width: 0px;"></span>
+    <span class="wave paused" style="width: 0px;"></span>
+    <span class="wave paused" style="width: 0px;"></span>
+  </div> -->
+  <div class="player">
+    <!-- Dashboard -->
+    <div class="dashboard">
+      <!-- Header -->
+      <header>
+        <h4>Now playing:</h4>
+        <h2>String 57th & 9th</h2>
+      </header>
+  
+      <!-- CD -->
+      <div class="cd">
+        <div class="cd-thumb" style="background-image: url('')">
+        </div>
+      </div>
+  
+      <!-- Control -->
+      <div class="control">
+        <div class="btn btn-repeat">
+          <i class="fas fa-redo"></i>
+        </div>
+        <div class="btn btn-prev">
+          <i class="fas fa-step-backward"></i>
+        </div>
+        <div class="btn btn-toggle-play">
+          <i class="fas fa-pause icon-pause"></i>
+          <i class="fas fa-play icon-play"></i>
+        </div>
+        <div class="btn btn-next">
+          <i class="fas fa-step-forward"></i>
+        </div>
+        <div class="btn btn-random">
+          <i class="fas fa-random"></i>
+        </div>
+      </div>
+  
+      <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+  
+      <audio id="audio" src=""></audio>
+    </div>
+  
+    <!-- Playlist -->
+    <div class="playlist">
+      <!-- <div class="song">
+        <div class="thumb" style="background-image: url('https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg')">
+        </div>
+        <div class="body">
+          <h3 class="title">Music name</h3>
+          <p class="author">Singer</p>
+        </div>
+        <div class="option">
+          <i class="fas fa-ellipsis-h"></i>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+<!-- Design from: https://static.collectui.com/shots/3671744/musicloud-revolutionary-app-for-music-streaming-large -->
